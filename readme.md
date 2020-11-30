@@ -1,102 +1,39 @@
-Description of Drone new 
-========================
+# Basic Web App structure
 
-Fisrt paragraph
----------------
-
-**Bold text**  
-*Cursive text*  
-***Bold cursive text***
-
-__Bold text__  
-_Cursive_
+Структура прошлых проектов была примерно такой:  
+![Старая структура](./src/assets/img/list_old.jpg)
 
 ---
-----
+## Новая структура с Pug, Sass, Gulp
 
->"Everebody wants to 
-be an austronaut"  
-> # "aNOTHER quote  
->  
->>Yws
-> - one
-> - two
+Первая итерация структуры проекта с упором на модульность. В качестве примера - проект с дронами. На первом изображении - рабочая структура. Для каждой страницы свой файл html, 1 файл стилей, 1 файл скриптов. 
 
-* First
-* Second
-* Third
+Особенность этой версии в том. что идет организации каталогов **по технологиям**: 
+1. Исходники разметки создаются в препроцессоре pug. модульность идет на уровне секций страниц.   
+![Структура Pug](./src/assets/img/list_pug.jpg)
 
-1.  Firsr
-2. Srcond
-3. Third
-    1. One 
-    2. Two
+2. Общий скрипт script.js собирается из отдельных модулей, каждый из которых реализует свою логику. Общий сбор скрипта будет обеспечиваться утилитой webpack.  
+![Структура JS](./src/assets/img/list_js.jpg)
 
-1. one
-2. two
-    - one
-    - two
-3. 
-        <html>
-            <head>
-            <title>Test</title>
-            </head>
-        <html>
+3. Исходники стилей организованы по системе 6+1. Один общий исходник стилей main.sass и 6 каталогов для отдельных модулей. Например, в папке components, для каждого модуля (над степенью дробления пока работаю) представлен отдельный файл sass.  
+![Структура Sass](./src/assets/img/list_sass.jpg)
 
-3. three
-   
-    
-## Another one
-
-It's an example of `code and u know it`
-
-``Use `code` in your Markdown file.``
-
-***
-
-    <html>
-        <head>
-        </head>
-    </html>
-
-My link example **[Link Example](https://google.com)**
-
-Another link *[Link](https://yandex.ru)*  
-And another link ***[Another link](http://yahoo.ru)***
-
-<https://facebook.com>  
-<gsrusin@gmail.com>
-
-## Third part
-***
-And it's another day
-
-This is a part of text with reference-style link. And this link is [here][1]. Link is followed by another paragraph. Another [reference-style link][2].
-
-
-> "Links are usefull"
-
-![main logo](./src/assets/img/main-logo.png)
-
-[![The image of quadrocopter](./src/assets/img/banner.jpg "Google link")](https://google.com)
-
-
-* this is a bullet in unordered list
-
-\* This is not
 ---
---- 
-End of document ---
+## Сборка проекта
 
+Сборка проекта состоит из двух частей: 
+1. сборка файлов в каталог build - готовые html страниц, файл стилей min.css, файл скрипта min.js.
+2. Сборка файлов c разметкой в формате  html, разбитых по модулям, для дальнейшей на сборки на стороне бэка. Примерная структура каталога build_cat:  
+![Структура build_cat](./src/assets/img/list_build_cut.jpg)
 
+---
+## Description of Sass/SCSS folders 
 
+Вставка с описанием каталогов для стилей Sass:  
 
-
-
-
-
-
-
-
-[1]: <https://yandex.ru> "Reference Style Link"
-[2]: <https://google.com> "google reference"
+1. base/ - animations, base, typography, and utilies, reset styles
+2. components/ - have a single scss/sass file for each individual component
+3. layout/ - header, footer, grid, navigation
+4. pages/ - single scss/sass file for each page
+5. abstracts/ - handles functions, mixins, variables
+6. vendors/ - 3rd party css,
