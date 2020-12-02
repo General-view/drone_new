@@ -1,0 +1,1201 @@
+$main-color: #010101
+$white-color: #ffffff
+$blue-color: #1C92FF
+$yellow-color: #FFB340
+$light-gray-color: #EFEFEF
+$deep-blue-color: #213969
+$red-color: #9B1810
+$green-color: #46AD35
+
+@mixin main-font($font-color: $main-color)
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 14px
+        weight: 700
+    line-height: 16px
+    color: $font-color
+
+*
+    box-sizing: border-box
+
+body
+    @include main-font
+    margin: 0
+    padding: 0
+
+    background-color: #ffffff
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden 
+    position: absolute
+
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+
+    white-space: nowrap
+
+    clip-path: inset(100%)
+    clip: rect(0 0 0 0)
+    overflow: hidden
+
+a
+    text-decoration: none
+
+img
+    max-width: 100%
+    height: auto
+
+h1
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 48px
+        weight: 700
+    line-height: 70px
+    color: $white-color
+
+h2
+    margin: 0
+    margin-bottom: 30px
+
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 36px
+        weight: 700
+    line-height: 42px
+    color: $main-color
+    text-align: center
+    text-transform: uppercase 
+
+@mixin h2-font
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 36px
+        weight: 700
+    line-height: 42px
+    color: $main-color
+    text-align: center
+    text-transform: uppercase 
+    
+h3
+    margin: 0
+
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 18px
+        weight: 700
+    line-height: 28px
+    color: $main-color
+    text-align: center   
+    text-transform: uppercase 
+
+@mixin h3-font
+    font: 
+        family: 'Roboro', Arial, sans-serif
+        size: 18px
+        weight: 700
+    line-height: 28px
+    color: $main-color
+    text-align: center   
+    text-transform: uppercase 
+
+section
+    overflow: hidden
+
+
+.hide
+    display: none
+
+.show
+    display: flex
+
+// main styles start
+
+.navbar-brand img 
+    height: 50px
+    width: auto
+
+.navbar
+    background-color: #010101be
+    .nav-item
+        margin-left: 30px
+        .nav-link
+            @include main-font($white-color)
+            text-transform: uppercase
+            &:hover
+                color: $yellow-color
+        &.active
+            border-bottom: 2px solid $yellow-color
+            .nav-link
+                color: $yellow-color
+        &.user-nav-item .nav-link
+            color: $main-color
+            background-color: $light-gray-color
+            &:hover
+                background-color: $yellow-color
+        &.user-nav-item.active .nav-link
+            background-color: $yellow-color
+            color: $main-color
+            &:hover 
+                opacity: .8
+
+.banner-area
+    padding: 140px 0 360px
+
+    background-color: $main-color
+    background-image: url(../img/main-page/banner-area/banner.jpg)
+    background-position: 50% 80%
+    background-repeat: no-repeat
+    background-size: cover
+
+.pop-services-area
+    padding: 35px 0 65px
+    background-color: $main-color
+    overflow: hidden
+    h2
+        color: $white-color
+    .btn
+        padding: .375rem 2rem
+
+        font-size: 24px
+        font-weight: 700
+        line-height: 30px
+        letter-spacing: -1px
+        text-transform: uppercase
+        color: $main-color
+
+        background-color: $yellow-color
+        &:hover
+            opacity: .8
+
+
+.pop-services-list 
+    margin-bottom: 70px
+
+.pop-services-item
+    margin-bottom: 30px
+    &_content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        padding: 25px
+        height: 100%
+
+        background-color: $blue-color
+        
+        h3
+            color: $white-color
+    &_image
+        height: 120px
+    &_link
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+        padding: 50px
+
+        text-align: center
+        font-size: 36px
+        line-height: 48px
+        text-decoration: none
+        color: $white-color
+        &:hover
+            text-decoration: none
+            color: $main-color
+
+.how-work-area
+    padding: 35px 0 35px
+    overflow: hidden
+.how-work-item
+    position: relative
+    margin-bottom: 30px
+    &_content
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 215px
+        margin: 20px
+        padding: 25px
+
+        text-align: center
+        color: $main-color
+
+        background-color: $yellow-color
+    &:not(:nth-last-child(1)) &_content::after
+        position: absolute
+        content: ""
+        right: -39px
+        top: calc(50% - 15px)
+        width: 40px
+        height: 40px
+
+        border: 20px solid transparent 
+        border-left: 20px solid $yellow-color
+        
+    &_number
+        position: absolute
+        top: 5px
+        right: 5px
+        margin: 0
+        padding: 0
+
+        font-size: 64px
+        line-height: 64px
+        color: $main-color
+        opacity: .4
+
+    &_sub-content
+        padding: 0 10px
+
+        text-align: center
+        font:
+            size: 12px
+            weight: 500
+        p 
+            margin: 0
+        
+
+.main-footer
+    padding: 45px 0 25px
+    background-color: $main-color
+
+.footer-details-list
+    margin: 0
+    padding: 0
+    list-style: none
+    .footer-details-item
+        text-transform: uppercase
+        color: $white-color
+
+        margin-bottom: 20px
+            
+        a
+            text-transform: uppercase
+            text-decoration: none
+            color: $white-color
+            &:hover,
+            &:focus
+                color: $yellow-color
+
+.modal
+    .modal-content
+        border: 20px solid $yellow-color
+        background-image: url(../img/services-results-page/modal-order/modal-bg.jpg)
+        background-position: 0 0
+        background-size: cover
+        background-repeat: no-repeat
+
+        .modal-header
+            display: flex
+            flex-direction: column
+            align-items: center
+        h5
+            margin: 0
+            font:
+                size: 24px
+                weight: 700
+            text-transform: uppercase
+            color: $main-color
+
+.sign-page
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    main
+        flex-grow: 1
+
+.sign-area
+    padding: 35px 0 35px
+
+.sign-in-form,
+.sign-up-form,
+.modal
+    .form-group
+        margin-bottom: 20px
+    .modal-footer
+        padding: 60px 0 40px
+        justify-content: center
+        border: none
+    label
+        font:
+            size: 16px
+            weight: 700
+        text-transform: uppercase
+        color: $main-color
+    input,
+    select
+        padding: 6px
+        font:
+            size: 18px
+            weight: 700
+        color: $main-color
+    select
+        padding-right: 25px
+    .forget-password
+        font:
+            size: 16px
+            weight: 700
+        text-transform: uppercase
+        text-decoration: underline
+        color: $main-color
+    .btn
+        margin: 0 20px 10px
+        padding: 10px 30px
+        font:
+            size: 16px
+            weight: 700
+        text-transform: uppercase
+        color: $white-color
+    .btn-danger
+        background-color: $red-color
+        border: none
+    .btn-primary
+        background-color: $deep-blue-color
+        border: none
+            
+// services page
+
+.narrow-banner-area
+    padding-top: 290px
+    background-color: $yellow-color
+    background-image: url("../img/services-page/banner-area/banner-bg.jpg")
+    background-repeat: no-repeat
+    background-position: 0 70%
+    background-size: cover
+
+.first-field-wrap
+    padding: 50px 0 50px
+    background-color: $main-color
+    h2
+        color: $white-color
+
+.services-item
+    margin-bottom: 30px
+    &_content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        padding: 25px
+        height: 100%
+
+        background-color: $blue-color
+        
+        h3
+            color: $white-color
+
+        &:hover,
+        &:focus,
+        .selected
+            background-color: $yellow-color
+
+    &_image
+        height: 120px
+
+.second-field-wrap
+    padding: 50px 0 50px
+
+.search-operators-form
+    label
+        padding: 0
+        padding-top: 6px
+        padding-bottom: 6px
+        padding-right: 20px
+
+        text-align: right
+        font-size: 20px
+        line-height: 28px
+        text-transform: uppercase
+    .form-check
+        margin-bottom: 5px
+        
+input[type="checkbox"]~label
+    margin-left: 30px
+
+input[type="checkbox"]
+    position: relative
+    z-index: 1000
+    &::before
+        position: absolute
+        content: ""
+        top: 0
+        left: 0
+        width: 40px
+        height: 40px
+
+        background-color: $white-color
+        border: 1px solid $blue-color
+        border-radius: 2pxs
+    &:checked::before
+        background-color: $blue-color
+        background-image: url("../icons/checked.svg")
+        background-position: 50% 50%
+        background-repeat: no-repeat    
+
+input[type="radio"]~label
+    margin-left: 30px
+
+input[type="radio"]
+    position: relative
+    z-index: 1000
+    &::before
+        position: absolute
+        content: ""
+        top: 3px
+        left: 0
+        width: 40px
+        height: 40px
+
+        background-color: $white-color
+        border: 1px solid $blue-color
+        border-radius: 50%
+    &:checked::before
+        background-color: transparent
+        background-image: radial-gradient($blue-color 0%, $blue-color 30%, $white-color 30%, $white-color 60%, $blue-color 60%, $blue-color 100%)
+
+.input-file-wrap
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    width: 100%
+    position: relative
+    text-align: center
+    .custom-file-input
+        opacity: 0
+        visibility: hidden
+        position: absolute
+    .input-file-label
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        max-width: 290px
+        height: 60px
+        margin: 0
+        @include h3-font
+        background: $blue-color
+        color: $white-color
+        
+        border-radius: 3px
+        cursor: pointer
+        &:hover
+            opacity: .8
+
+.third-field-wrap
+    padding: 50px 0 50px
+    .submit-btn-wrap
+            display: flex
+            justify-content: center
+            .btn
+                padding: .375rem 2rem
+
+                font-size: 20px
+                font-weight: 600
+                line-height: 30px
+                letter-spacing: auto
+                text-transform: uppercase
+                color: $main-color
+
+                background-color: $yellow-color
+                &:hover
+                    opacity: .8
+
+// operators page
+
+.operators-list-area
+    padding: 35px 0 65px
+
+.operators-list
+    margin: 0
+    padding: 0
+    list-style: none
+
+
+.operators-item
+    margin-bottom: 50px
+    .card
+        border: none
+    &_image
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+            max-width: 100%
+    &_wrap
+        position: relative
+        background-color: $light-gray-color      
+    &_name
+        font-size: 24px
+        font-weight: 700
+        text-transform: uppercase
+    &_description
+        text-transform: uppercase
+    &_footer
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+    .btn
+        padding: .375rem 2rem
+
+        font-size: 20px
+        font-weight: 600
+        line-height: 30px
+        letter-spacing: auto
+        text-transform: uppercase
+        color: $main-color
+
+        background-color: $yellow-color
+        &:hover
+            opacity: .8
+    &_price-group
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+        padding: 10px 0 10px 50px
+        font-size: 24px
+        font-weight: 700
+        text-transform: uppercase
+        >span
+            margin-right: 10px
+            padding: 5px 0
+            text-align: center
+    &_price
+        position: relative
+        order: 1
+    &_new-price
+        color: #9B1810
+        order: 2
+    &_new-price+&_price::before
+        position: absolute
+        content: ""
+        width: 110%
+        height: 4px
+        background-color:  #9B1810
+        left: -5%
+        bottom: 50%
+        transform: rotate(-10deg)
+        color: $yellow-color
+
+@media screen and (min-width: 768px)
+    .operators-item      
+        &:nth-child(2n + 1) .operators-item_wrap::before
+            position: absolute
+            content: ""
+            left: -39px
+            top: calc(50% - 15px)
+            width: 40px
+            height: 40px
+
+            border: 20px solid transparent 
+            border-right: 20px solid $light-gray-color
+
+        &:nth-child(2n) .operators-item_wrap::before
+            position: absolute
+            content: ""
+            right: -39px
+            top: calc(50% - 15px)
+            width: 40px
+            height: 40px
+
+            border: 20px solid transparent 
+            border-left: 20px solid $light-gray-color
+        &:nth-child(2n + 1) &_image
+            order: 1
+        &:nth-child(2n) &_image
+            order: 2
+        &:nth-child(2n + 1) &_wrap
+            order: 2
+        &:nth-child(2n) &_wrap
+            order: 1 
+
+.operators-footer
+    .btn
+        padding: .375rem 2rem
+
+        font-size: 20px
+        font-weight: 500
+        line-height: 30px
+        letter-spacing: auto
+        text-transform: uppercase
+        color: $white-color
+
+        background-color: $blue-color
+        &:hover
+            opacity: .8
+
+.pagination
+    .page-item
+        padding: 0 10px
+        color: $blue-color
+        &.active .page-link
+            background-color: $blue-color
+            border-color: $blue-color
+            color: $white-color
+    .page-link
+        color: $blue-color
+        border-radius: 0 !important
+
+.modal-order-confirm
+    .modal-content
+        border: 20px solid $yellow-color
+        background-image: url(../img/services-results-page/modal-order/modal-bg.jpg)
+        background-position: 0 0
+        background-size: cover
+        background-repeat: no-repeat
+
+        .modal-header
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+        h5
+            margin: 0
+            text-align: right
+            font:
+                size: 24px
+                weight: 700
+            text-transform: uppercase
+            color: $main-color
+        .form-group
+            margin-bottom: 0px
+        label
+            font:
+                size: 18px
+                weight: 700
+            text-transform: uppercase
+            color: $main-color
+        input
+            font:
+                size: 18px
+                weight: 700
+            text-transform: uppercase
+            color: $main-color
+            text-align: right
+        span
+            display: block
+            padding: 7px 0
+            text-align: right
+            font:
+                size: 18px
+                weight: 700
+            line-height: 24px
+            text-transform: uppercase
+            color: $main-color
+        p
+            font-weight: 500
+
+// order made page
+
+.order-made-page
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    main
+        flex-grow: 1
+    
+.order-made-area
+    padding: 55px 0 105px
+    span
+        display: block
+        margin-bottom: 50px
+        @include h2-font
+    p
+        font-size: 16px
+        line-height: 24px
+    a
+        color: $red-color
+        
+
+// Operators page
+
+.operator-banner-area
+    padding: 140px 0 120px
+
+    background-color: $main-color
+    background-image: url(../img/operators-page/banner-area/banner-bg.jpg)
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: cover
+
+    span
+        display: block
+        font:
+            size: 36px
+            weight: 700
+        line-height: 48px
+        text-transform: uppercase
+        text-align: center
+        color: $white-color
+
+        &.yellow-highlight
+            margin-bottom: 300px
+
+            color: $main-color
+            background-color: $yellow-color
+
+        &.yellow-colored
+            position: relative
+            color: $yellow-color
+            &::after 
+                position: absolute
+                content: ""
+                left: calc(50% - 20px)
+                bottom: -39px
+                width: 40px
+                height: 40px
+
+                border: 20px solid transparent 
+                border-top: 20px solid $yellow-color
+    .operator-banner
+        display: none
+
+    @media screen and (min-width: 1200px) 
+        .container
+            position: relative
+        .operator-banner
+            position: absolute
+
+            top: 60%
+            width: 200px
+            height: 200px
+            background: transparent
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+            img
+                margin-bottom: 10px
+            span
+                display: block
+                font:
+                    size: 18px
+                    weight: 700
+                line-height: 28px
+                color: $white-color
+                text-align: center   
+                text-transform: uppercase 
+            &__left
+                left: 0
+            &__right
+                right: 0
+
+@media screen and (max-width: 575px) 
+    .operator-banner-area
+        span
+            font:
+                size: 28px
+            line-height: 34px
+            &.yellow-highlight
+                margin-bottom: 150px
+
+.operators-how-work-area
+    padding: 50px 0 50px
+
+    .how-work-item_content
+        background-color: $deep-blue-color
+        &:not(:nth-last-child(1))::after
+            border-left-color: $deep-blue-color
+
+        h3
+            color: $white-color
+    .btn
+        padding: .375rem 2rem
+
+        font-size: 24px
+        font-weight: 700
+        line-height: 30px
+        letter-spacing: -1px
+        text-transform: uppercase
+        color: $main-color
+
+        background-color: $yellow-color
+        &:hover
+            opacity: .8
+
+.platform-stat-area
+    padding: 50px 0 50px
+
+    .statistic-element
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        
+        .circul-chart
+            max-width: 60%
+            .circle 
+                stroke: $blue-color
+                fill: none
+                stroke-width: 2
+                stroke-linecap: none
+                animation: progress 1s ease-out forwards
+        &_number
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+
+            font:
+                size: 36px
+                weight: 700
+            line-height: 48px
+            text-transform: uppercase
+            text-align: center
+            color: $light-gray-color
+        &_name
+            @include main-font($font-color: $main-color)
+            display: block
+            margin-top: 10px
+            margin-bottom: 30px
+            text-align: center
+            
+@keyframes progress 
+  0% 
+    stroke-dasharray: 0 100
+
+
+// User Account (UA) pages styles
+
+.ua-main-area
+    position: relative
+    z-index: 0
+    .ua-bg-shape
+        position: absolute
+        content: ""
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -100
+        
+
+    .ua-col
+        padding: 50px 0 50px
+        &__left
+            background-color: $main-color
+            color: $white-color
+            h2
+                color: $white-color
+
+@media screen and (max-width: 991px)
+    .ua-main-area .ua-col__left
+        min-width: 100vw  
+
+@media screen and (min-width: 992px)
+    .ua-bg-shape
+        background: linear-gradient(to right, $main-color 0%, $main-color 33.333333%, $white-color 33.333333%, $white-color 100%)
+
+.ua-menu
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-top: -15px
+    margin-bottom: -15px
+    &_item
+        padding: 15px 
+    &_link
+        position: relative
+        @include h3-font
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 215px
+        height: 215px
+        
+        text-decoration: none
+        background-color: $blue-color
+        &:hover
+            color: $main-color
+            text-decoration: none
+            opacity: .8
+        &::after
+            position: absolute
+            content: ""
+            right: -39px
+            top: calc(50% - 20px)
+            width: 40px
+            height: 40px
+
+            border: 20px solid transparent 
+            border-left: 20px solid $blue-color
+        &.active
+            background-color: $yellow-color
+            &::after
+                border-left: 20px solid $yellow-color
+
+@media screen and (max-width: 991px)
+    .ua-menu_item
+        padding: 10px
+    .ua-menu_link
+        height: 80px
+
+.ua-logout
+    display: block
+    width: 215px
+    margin: 30px auto 0 auto
+    padding: .375rem 0
+    font-size: 20px
+    font-weight: 600
+    line-height: 30px
+    letter-spacing: auto
+    text-transform: uppercase
+    color: $main-color
+
+    background-color: $yellow-color
+    &:hover
+        opacity: .8
+
+.ua-orders
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-top: -15px
+    margin-bottom: -15px
+    &_item
+        padding: 15px 
+    &_wrap
+        background-color: $light-gray-color
+    &_header
+        position: relative
+        padding: 10px 50px 10px 0
+        margin: 0
+        background-color: $light-gray-color
+    &_number
+        display: flex
+        align-items: center
+        @include h3-font
+        color: $blue-color
+    &_status
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        padding-left: 15px
+        width: 150px
+        height: 50px
+
+        text-transform: uppercase
+        &::before
+            position: absolute
+            content: ""
+            left: -20px
+            top: calc(50% - 10px)
+            width: 20px
+            height: 20px
+
+            border: 10px solid transparent 
+            border-right: 10px solid $light-gray-color
+        &::after
+            position: absolute
+            content: ""
+            top: 0
+            right: 0
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+        &.placed
+            background-color: $blue-color
+            &::before
+                border-right: 10px solid $blue-color
+            &::after
+                content: "Заказ оформлен"
+                color: $white-color
+        &.accepted
+            background-color: $yellow-color
+            &::before
+                border-right: 10px solid $yellow-color
+            &::after
+                content: "Заказ получен исполнителем"
+                text-align: center
+        &.done
+            background-color: $green-color
+            &::before
+                border-right: 10px solid $green-color
+            &::after
+                content: "Заказ исполнен"
+                color: $white-color
+        &.cancelled
+            background-color: $red-color
+            &::before
+                border-right: 10px solid $red-color
+            &::after
+                content: "Заказ отменен"
+                color: $white-color
+
+    &_toggler
+        cursor: pointer
+        position: absolute  
+        top: calc(50% - 20px)
+        left: calc( 100% - 50px )
+        width: 40px
+        height: 40px
+        background-color: transparent
+        background-image: url("../icons/arrow-down.svg")
+        background-position: 50% 50%
+        background-repeat: no-repeat
+        background-size: 80%
+        border: none
+        &:hover
+            opacity: .8
+        &:focus
+            outline: 2px auto $blue-color
+            
+    &_details
+        height: 0
+        overflow: hidden
+        transition: all 1s ease
+        &-section
+            padding: 20px 0
+        &-section.underline-section
+            border-bottom: 2px solid $main-color
+        &-group
+            display: flex
+            align-items: center
+            padding: 10px 0
+        &-cat
+            &__blue
+                color: $blue-color
+        &-value
+            padding-left: 15px
+        span
+            font-size: 18px
+            line-height: 20px
+            text-transform: uppercase
+            &.ua-orders_details-price-status
+                display: inline-block
+                margin-left: 10px
+                font-size: 12px
+                font-weight: 800
+                color: $green-color
+                border: 1px solid $green-color
+        form
+            display: flex
+            align-items: center
+            select
+                padding: 6px
+                margin-right: 5px
+                font:
+                    size: 18px
+                    weight: 700
+                color: $main-color
+                text-transform: uppercase
+            .btn
+                position: relative
+                width: 35px
+                height: 35px
+                background-color: $yellow-color
+                background-image: url("../icons/update.svg")
+                background-position: 50% 50%
+                background-size: 60%
+                background-repeat: no-repeat
+        &-header
+            display: inline-block
+            @include h3-font
+            color: $blue-color  
+            margin-bottom: 20px
+        p
+            font-weight: 500     
+            
+.ua-orders_item.rolled
+    .ua-orders_toggler
+        background-image: url("../icons/arrow-up.svg")
+    .ua-orders_details
+        height: auto
+
+
+// UA services page
+
+.ua-form_group
+    padding: 10px 0
+    border-top: 1px solid $main-color
+
+    .form-group
+        align-items: center
+    
+    &-header
+        margin-top: 1rem
+        @include h3-font
+        color: $blue-color
+        .form-check
+            display: flex
+            align-items: center
+
+    label
+        padding-top: 0
+        padding-bottom: 0
+        font-size: 16px
+        text-transform: uppercase
+        
+    input:not([type="checkbox"]),
+    input:not([type="radio"])
+        min-height: 50px
+    input[type="checkbox"]
+    input:not([type="radio"])
+        margin: 0
+        padding: 0 
+        padding-left: 10px
+        &::before
+            top: 6px
+            left: -10px
+    .ua-form_group-settings:disabled
+        label
+            opacity: .3
+.ua-form
+    h3
+        text-align: left
+        color: $blue-color  
+    .btn
+        padding: .375rem 1.5rem
+        margin-bottom: 10px
+        @include h3-font
+        &-warning
+            color: $main-color
+            background-color: $yellow-color
+        &-primary
+            color: $white-color
+            background-color: $blue-color
+        &:hover
+            opacity: .8
+    .operator-photo-image
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 10px
+        height: 160px
+        max-height: 160px
+        border: 1px solid #ced4da
+        border-radius: .25rem
+        img
+            max-height: 100%
+            max-width: 100%
+    .operator-presentation-field
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 10px
+        @include main-font
+        .operator-presentation-link
+            overflow: hidden
+            @include main-font
+            
+        
+
+
+.include-vat-group
+    color: $blue-color
+    input[type="checkbox"]::before
+        top: 4px
