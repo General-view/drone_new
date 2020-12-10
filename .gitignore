@@ -13,4 +13,5 @@ Thumbs.db
 node_modules/
 
 # Папка с собранными файлами проекта
-# build/
+build/
+build_cut/
